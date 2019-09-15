@@ -1,0 +1,60 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  display: flex;
+  background-color: #282c34;
+  justify-content: center;
+  color: white;
+  width: 100%;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  }
+.text {
+  font-family: 'Courier New', Courier, monospace;
+  font-style: bold;
+  font-size: 20px;
+}
+.welcome {
+  font-size: 20px;
+  text-align: center; 
+}
+.instructions {
+  text-align: center; 
+  color: '#333333';
+}
+.tabIcon {
+  width: 16;
+  height: 16;
+}
+.react_clock {
+  width:'max-content';
+  height:'max-content';
+  background-Color: 'lemonchiffon';
+  border-Radius: 180;
+}
