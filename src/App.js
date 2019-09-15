@@ -1,30 +1,17 @@
 import React, {Component} from 'react';
-import ClockSign from './pages/ClockSign';
-import Clockjs from './Components/Clockjs';
+import {Route, Switch} from 'react-router-dom';
 import './App.css';
+import Home from './pages/Home';
+import NotFound from './Components/NotFound';
 
 class App extends Component {
   
-  state= {
-    token: '',
-    request: [],
-    page: "registrohorario",
-    keyword:'',
-    userid:0,
-  }
-
   render () {  
-  
     return (
-      <div className='container'>
-          <header className='App-header'>
-            <h2>Registro Horario</h2>
-          </header>
-          <div>
-            <Clockjs/>
-            <ClockSign props={this.state}/>
-          </div>
-      </div>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path='*' exact={true} component={NotFound} />
+      </Switch>
     );
   }
 }
