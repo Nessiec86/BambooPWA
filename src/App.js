@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
+import ClockSign from './pages/ClockSign';
+import Clockjs from './Components/Clockjs';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  
+  state= {
+    token: '',
+    request: [],
+    page: "registrohorario",
+    keyword:'',
+    userid:0,
+  }
+
+  render () {  
+  
+    return (
+      <div className='container'>
+          <header className='App-header'>
+            <h2>Registro Horario</h2>
+          </header>
+          <div>
+            <Clockjs/>
+            <ClockSign props={this.state}/>
+          </div>
+      </div>
+    );
+  }
 }
 
 export default App;
