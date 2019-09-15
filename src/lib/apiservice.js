@@ -3,7 +3,7 @@ import axios from 'axios';
 
 class User {
     constructor () {
-        const APIURL = 'https://bamboo.veritas.es/service/';
+        const APIURL = process.env.REACT_APP_PUBLIC_DOMAIN;
         this.User = axios.create ({
             baseURL: APIURL,
         });
