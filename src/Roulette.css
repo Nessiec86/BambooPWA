@@ -1,0 +1,15 @@
+.roulette {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #282c34;
+    height: 65rem;
+    width: 100%;
+  }
+  
+  .roulette-container {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+  }
+  
