@@ -11,11 +11,12 @@ const DotWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 50% 0 0 0;
+  margin: 90% 0;
+  background-color: #ac451d;
 `;
 
 const Dot = styled.div`
-  background-color: black;
+  background-color: white;
   border-radius: 50%;
   width: 10px;
   height: 10px;
@@ -29,7 +30,7 @@ class LoadingDots extends Component {
   render() {
     return (
       <DotWrapper>
-        <h1>LOADING</h1>
+        <h1 style={{color:'white'}}>LOADING</h1>
         <Dot delay="0s" />
         <Dot delay=".1s" />
         <Dot delay=".2s" />

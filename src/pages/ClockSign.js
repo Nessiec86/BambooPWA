@@ -71,7 +71,7 @@ class Clocksign extends Component {
         
          console.log(text.length) 
         return (
-                <div className='container'>
+                <div className='clock-sign'>
                     <input
                         placeholder="DNI"
                         onChange={this.handleChange}
@@ -80,16 +80,16 @@ class Clocksign extends Component {
                     />
                     
                     <p>Usuario: {name}</p>
-                    <Button variant="primary" onClick={() => this.handleSubmit(text)}>Validar</Button>
+                    <Button variant="success"className='val' onClick={() => this.handleSubmit(text)}>Validar</Button>
                     {name.length < 9 ?
                         <div>
                         </div>
                         :
-                        <div>
+                        <div style={{display:'flex', justifyContent:'center'}}>
                             {start === 0 ?
-                                <Button variant="primary" onClick={() => this.handleWork(text)}>Empezar a trabajar</Button>
+                                <Button variant="success" className='work' onClick={() => this.handleWork(text)}>Empezar a trabajar</Button>
                                 :
-                                <Button variant="primary" onClick={() => this.handleWork(text)}>Dejar de trabajar</Button>
+                                <Button variant="danger" className='work' onClick={() => this.handleWork(text)}>Dejar de trabajar</Button>
                             }
                         </div>
                     }

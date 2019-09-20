@@ -17,7 +17,7 @@ class Clockjs extends Component {
     render () {  
       
       return (
-        <div className='react-clock'>
+        <div className='r-clock'>
             <Clock
               value={this.state.date}
               size={250}
