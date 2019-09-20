@@ -5,6 +5,7 @@ import Clock from './pages/Clock';
 import Home from './pages/Home';
 import Canvas from './pages/Canvas';
 import NotFound from './Components/NotFound';
+require('dotenv').config();
 
 class App extends Component {
   

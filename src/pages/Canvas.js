@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';    
 import '../../src/Roulette.css';
 import { Button } from 'react-bootstrap';
+import mongo from '../lib/mongo-service';
 
 
 class Canvas extends Component {
@@ -192,6 +193,7 @@ class Canvas extends Component {
       // ctx.fillText(text, baseSize - ctx.measureText(text).width / 2, baseSize / 3);
       ctx.fillText(text, baseSize - ctx.measureText(text).width / 2, baseSize / 0.5);
       ctx.restore();
+      //mongo.create (text)   
       // this.props.onComplete(text);
     }
   
@@ -208,7 +210,8 @@ class Canvas extends Component {
     render() {
         const { baseSize } = this.props;
         //<input type="button" value="spin" onClick={this.handleOnClick} className="button" id="spin" />
-              
+        
+
         return (
           <div className="roulette">
             <div className="roulette-container">
