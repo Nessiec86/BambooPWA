@@ -4,7 +4,7 @@ import axios from 'axios';
 class Data {
     constructor() {
         this.Data = axios.create({
-          baseURL: 'localhost:5000',
+          baseURL: process.env.PUBLIC_DOMAIN,
           withCredentials: true
         });
       }
@@ -12,7 +12,7 @@ class Data {
       create = (data) => {
         const { premio } = data;
         return this.Data
-          .post("/", { premio })
+          .post("/canvas", { premio })
           .then(({ data }) => data);
       }
     }

@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';    
 import '../../src/Roulette.css';
 import { Button } from 'react-bootstrap';
+import Nav from '../Components/Nav';
 import mongo from '../lib/mongo-service';
-
 
 class Canvas extends Component {
     constructor(props) {
@@ -45,6 +45,34 @@ class Canvas extends Component {
         'PRODUCTO GRATIS',
         'PRODUCTO GRATIS',
         ],
+      colors: [
+        '#DCD080',
+        '#84C7B5',
+        '#EFB73A',
+        '#DDE8BC',
+        '#196F58',
+        '#EB6C7F',
+        '#DCD080',
+        '#84C7B5',
+        '#EFB73A',
+        '#DDE8BC',
+        '#196F58',
+        '#EB6C7F',
+      ],
+      text_colors: [
+        '#AC4424',
+        '#DDE8BC',
+        '#DDE8BC',
+        '#196F58',
+        '#DDE8BC',
+        '#DDE8BC',
+        '#196F58',
+        '#DDE8BC',
+        '#DDE8BC',
+        '#EB6C7F',
+        '#DDE8BC',
+        '#DDE8BC',
+      ],
       baseSize: 400,
       spinAngleStart: Math.random() * 10 + 10,
       spinTimeTotal: Math.random() * 3 + 4 * 1000,
@@ -60,24 +88,24 @@ class Canvas extends Component {
     }
     
     RGB2Color(r,g,b) {
-        return '#' + this.byte2Hex(r) + this.byte2Hex(g) + this.byte2Hex(b);
+      return '#' + this.byte2Hex(r) + this.byte2Hex(g) + this.byte2Hex(b);
     }
   
     getColor(item, maxitem) {
-      const phase = 0;
+      const phase = 0;                                    
       const center = 128;
       const width = 128;
       const frequency = Math.PI*2/maxitem;
-  
-      const red   = Math.sin(frequency*item+2+phase) * width + center;
+      
+      const red = Math.sin(frequency*item+2+phase) * width + center;
       const green = Math.sin(frequency*item+0+phase) * width + center;
       const blue  = Math.sin(frequency*item+4+phase) * width + center;
-  
+      
       return this.RGB2Color(red,green,blue);
     }
   
     drawRouletteWheel() {
-      const { options, baseSize } = this.props;
+      const { options, baseSize, colors, text_colors } = this.props;
       let { startAngle, arc } = this.state;
       
       // const spinTimeout = null;
@@ -85,41 +113,41 @@ class Canvas extends Component {
       // const spinTimeTotal = 0;
       
       let ctx;
-      
       const canvas = this.refs.canvas;
+      
+      
       if (canvas.getContext) {
-        //const outsideRadius = baseSize - 25;
-        //const textRadius = baseSize - 45;
         const insideRadius = baseSize - 55;
   
         ctx = canvas.getContext('2d');
-        ctx.clearRect(0,0,600,600);
-
-        // IMG ORIGINAL
-        const img = new Image()
-        img.src= 'https://firebasestorage.googleapis.com/v0/b/bamboo-ver.appspot.com/o/ruleta.png?alt=media&token=bb13dbf3-4077-4fc5-aea8-48a730012e8e';
-        ctx.drawImage(img,0,0,800,800);
+        ctx.clearRect(0,0,800,800);
+        ctx.font = '36px Verifont';
         
-
         ctx.strokeStyle = 'black';
         ctx.lineWidth = 2;
   
-        ctx.font = '14px Helvetica, Arial';
-  
-        for(let i = 0; i < options.length; i++) {
-          const angle = startAngle + i * arc;
+
+        // for(let i = 0; i < options.length; i++) {
+        // const angle = startAngle + i * arc;
+        
+        //   ctx.fillStyle = this.getColor(i,options.length);
           
-          ctx.fillStyle = this.getColor(i, options.length);
-          
+          for (let i = 0; i <colors.length; i++) {
+            const angle = startAngle + i * arc;
+            
+            ctx.fillStyle = colors[i]
+           
+          //Dibujo de ruleta!
           ctx.beginPath();
           ctx.arc(baseSize, baseSize, 5 /*outsideRadius*/, angle, angle + arc, false);
           ctx.arc(baseSize, baseSize, insideRadius, angle + arc, angle, true);
           ctx.fill();
-  
           ctx.save();
-          ctx.fillStyle = 'white';
-          ctx.translate(baseSize + Math.cos(angle + arc / 2) * /*textRadius*/ 240, 
-                        baseSize + Math.sin(angle + arc / 2) * /*textRadius*/ 240);
+          //ctx.fillStyle = 'white';
+          ctx.fillStyle = text_colors[i];
+          
+          ctx.translate(baseSize + Math.cos(angle + arc / 2) * /*textRadius*/ 200, 
+                        baseSize + Math.sin(angle + arc / 2) * /*textRadius*/ 200);
           //ctx.rotate(angle + arc / 2 + Math.PI / 2);
           ctx.rotate(angle + arc / 22.5 + Math.PI / 22.5);
           const text = options[i];
@@ -179,7 +207,11 @@ class Canvas extends Component {
     stopRotateWheel() {
       let { startAngle, arc } = this.state;
       const { options, baseSize } = this.props;
-  
+      
+      const img = new Image ()
+      img.src = '../img/VALE.psd';
+      console.log(img)
+
       const canvas = this.refs.canvas;
       const ctx = canvas.getContext('2d');
   
@@ -187,13 +219,16 @@ class Canvas extends Component {
       const arcd = arc * 180 / Math.PI;
       const index = Math.floor((360 - degrees % 360) / arcd);
       ctx.save();
-      ctx.font = 'bold 20px Helvetica, Arial';
+      ctx.font = 'bold 30px Verifont';
       const text = options[index]
       console.log(text)
+
+      ctx.drawImage(img,0,0,100,100);
+
       // ctx.fillText(text, baseSize - ctx.measureText(text).width / 2, baseSize / 3);
       ctx.fillText(text, baseSize - ctx.measureText(text).width / 2, baseSize / 0.5);
       ctx.restore();
-      //  mongo.create (text)   
+      // mongo.create (text)   
       // this.props.onComplete(text);
     }
   
@@ -213,19 +248,24 @@ class Canvas extends Component {
         
 
         return (
-          <div className="roulette">
-            <div className="roulette-container">
-              <canvas ref="canvas" width={baseSize * 2} height={baseSize * 2} className="roulette-canvas"></canvas>
-            </div>
-            <div className="roulette-container">
-              <Button 
-                value="spin" 
-                onClick={this.handleOnClick} 
-                className="button"  
-                style={{margin:'2rem 0 0 0'}} 
-                id="spin">
-                GIRAR!!
-              </Button>
+          <div className='background'>
+            <Nav/>
+            <div className="roulette">
+              <h1 style={{fontSize: '3rem'}}>LA RULETA DE VERITAS</h1> 
+              <div className="roulette-container">
+                <canvas ref="canvas" width={baseSize * 2} height={baseSize * 2} className="roulette-canvas"></canvas>
+              </div>
+              <div className="roulette-container">
+                <Button 
+                  variant="success"
+                  value="spin" 
+                  onClick={this.handleOnClick} 
+                  className="button"  
+                  style={{fontFamily:'Verifont', fontSize:'20px'}} 
+                  id="spin">
+                  GIRAR!!
+                </Button>
+              </div>
             </div>
           </div>
         );
