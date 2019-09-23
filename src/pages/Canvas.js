@@ -261,7 +261,11 @@ class Canvas extends Component {
                   value="spin" 
                   onClick={this.handleOnClick} 
                   className="button"  
-                  style={{fontFamily:'Verifont', fontSize:'20px'}} 
+                  style={{
+                    fontFamily:'Verifont',
+                    fontSize:'20px',
+                    margin: '5rem 0',
+                  }} 
                   id="spin">
                   GIRAR!!
                 </Button>
