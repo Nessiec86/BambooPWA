@@ -7,6 +7,7 @@ class Clocksign extends Component {
 
     state = {
         text: '',
+        date: '',
         data: {
             data: {
                 id:'',
@@ -25,8 +26,6 @@ class Clocksign extends Component {
             this.setState({
                 data,
             });
-            console.log(data)
-
         })
         .catch(error => {
             this.setState({
@@ -41,9 +40,11 @@ class Clocksign extends Component {
         .then((working) => {
             this.setState({
                 working,
+                date: new Date().toString(),
             });
             this.handleSubmit(event)
         })
+        
         .catch(error => {
             this.setState({
                 status: "error",
@@ -63,13 +64,17 @@ class Clocksign extends Component {
         this.setState({ [name]: value });
     };
     
-       
+    
 
     render() {
-        const {text} = this.state
-        const {id, name, start, } = this.state.data.data
-        
-         console.log(text.length) 
+        const { text, date } = this.state
+        const { id, name, start } = this.state.data.data
+        const dateObj = new Date(start * 1000); 
+        const utcString = dateObj.toUTCString(); 
+        const time = utcString.slice(-11, -4); 
+    
+        console.log(time)
+           
         return (
                 <div className='clock-sign'>
                     <input
@@ -78,8 +83,12 @@ class Clocksign extends Component {
                         name="text"
                         value={text}
                     />
-                    
-                    <p>Usuario: {name}</p>
+                    <p style={{margin:'1rem 0'}}>Usuario: {name}</p>
+                    {start > 0 ?
+                        <p>Hora de Entrada: {time}</p>
+                    :
+                        <p></p>
+                    }
                     <Button variant="success"className='val' onClick={() => this.handleSubmit(text)}>Validar</Button>
                     {name.length < 9 ?
                         <div>
@@ -89,7 +98,9 @@ class Clocksign extends Component {
                             {start === 0 ?
                                 <Button variant="success" className='work' onClick={() => this.handleWork(text)}>Empezar a trabajar</Button>
                                 :
+                                <>
                                 <Button variant="danger" className='work' onClick={() => this.handleWork(text)}>Dejar de trabajar</Button>
+                                </>
                             }
                         </div>
                     }
