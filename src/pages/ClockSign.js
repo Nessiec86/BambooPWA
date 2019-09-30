@@ -22,10 +22,12 @@ class Clocksign extends Component {
     
     handleSubmit = (event) => {
         user.read (event)
-        .then((data) => {
-            this.setState({
-                data,
-            });
+        .then((data) => { 
+            if (data.data.id > 0) {
+                this.setState({
+                    data,
+                });
+            }
         })
         .catch(error => {
             this.setState({
@@ -67,14 +69,13 @@ class Clocksign extends Component {
     
 
     render() {
-        const { text, date } = this.state
-        const { id, name, start } = this.state.data.data
+        let time = 0
+        const { text } = this.state
+        const { name, start } = this.state.data.data
         const dateObj = new Date(start * 1000); 
-        const utcString = dateObj.toUTCString(); 
-        const time = utcString.slice(-11, -4); 
-    
-        console.log(time)
-           
+        const utcString = dateObj.toString(); 
+        time = utcString.slice(16, 24); 
+        
         return (
                 <div className='clock-sign'>
                     <input

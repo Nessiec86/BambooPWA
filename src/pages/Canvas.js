@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import '../../src/Roulette.css';
 import { Button } from 'react-bootstrap';
 import Nav from '../Components/Nav';
-import mongo from '../lib/mongo-service';
 
 class Canvas extends Component {
     constructor(props) {
