@@ -4,7 +4,7 @@ import './App.css';
 import Clock from './pages/Clock';
 import News from './pages/News';
 import Home from './pages/Home';
-import Canvas from './pages/Canvas';
+import Profile from './pages/Profile';
 import NotFound from './Components/NotFound';
 require('dotenv').config();
 
@@ -16,7 +16,7 @@ class App extends Component {
         <Route exact path="/" component={Home} />
         <Route exact path="/Clock" component={Clock} />
         <Route exact path='/news' component={News}/>
-        <Route exact path="/Canvas" component={Canvas} />
+        <Route exact path="/Profile" component={Profile} />
         <Route path='*' exact={true} component={NotFound} />
       </Switch>
     );

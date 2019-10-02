@@ -1,11 +1,17 @@
-
+@font-face {
+  font-family: 'Verifont';
+  src:
+    local('Verifont'),
+    local('Verifont'),
+    url(./font/veri.otf) format('opentype');
+}
 .App {
+  font-family: 'Verifont';
   text-align: center;
   display: flex;
   background-color: #ac451d;
   flex-direction: column;
   justify-content: center;
-  font-family: 'Verifont';
 }
 
 .backgr {
@@ -14,8 +20,11 @@
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 20%;
+  height: 10%;
+  width: 10%;
   pointer-events: none;
+  margin: 0 auto;
+ 
 }
 
 .App-header {

@@ -10,7 +10,7 @@ class Home extends Component {
 
   state = {
     isLoading: true,
-    status: "loading",
+    status: "loading",  
   }
 
   componentDidMount(){
@@ -38,13 +38,13 @@ class Home extends Component {
             <img src={logoveri} style={{width: '30%', margin:'5% auto'}} alt='logo-veritas'/>
             <img src={logo} className="App-logo" alt="logo" />
             <Link to = '/Clock'>
-                <Button style={{margin:'10rem 0 1rem 0'}}>Clock</Button>
+                <Button  variant="outline-warning" style={{margin:'10rem 0 1rem 0', fontWeight:'bolder', width: '6rem '}}>Clock</Button>
             </Link>
             <Link to = '/News'>
-                <Button >News</Button>
+                <Button variant="outline-warning" style={{width: '6rem'}}>News</Button>
             </Link>
-            <Link to = '/Canvas'>
-                <Button style={{margin:'1rem 0 15rem 0'}}>Canvas</Button>
+            <Link to = '/Profile'>
+                <Button variant="outline-warning" style={{margin:'1rem 0 15rem 0', width: '6rem'}}>User Profile</Button>
             </Link>
         </div>
     );
