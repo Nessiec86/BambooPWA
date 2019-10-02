@@ -6,6 +6,8 @@ import News from './pages/News';
 import Home from './pages/Home';
 import Profile from './pages/Profile';
 import NotFound from './Components/NotFound';
+
+
 require('dotenv').config();
 
 class App extends Component {

@@ -5,6 +5,7 @@ import logo from '../logo.svg';
 import logoveri from '../img/layout_set_logo.png';
 import LoadingDots from '../Components/LoadingDots';
 import { setTimeout } from 'timers';
+import { askForPermissioToReceiveNotifications } from '../lib/Push-notifications';
 
 class Home extends Component {
 
@@ -25,8 +26,8 @@ class Home extends Component {
 
     };
   
-  
-  render () {  
+  render () { 
+   
     const { isLoading } = this.state;
     return (
       isLoading ? 
@@ -38,7 +39,7 @@ class Home extends Component {
             <img src={logoveri} style={{width: '30%', margin:'5% auto'}} alt='logo-veritas'/>
             <img src={logo} className="App-logo" alt="logo" />
             <Link to = '/Clock'>
-                <Button  variant="outline-warning" style={{margin:'10rem 0 1rem 0', fontWeight:'bolder', width: '6rem '}}>Clock</Button>
+                <Button  variant="outline-warning" style={{margin:'5rem 0 1rem 0', fontWeight:'bolder', width: '6rem '}}>Clock</Button>
             </Link>
             <Link to = '/News'>
                 <Button variant="outline-warning" style={{width: '6rem'}}>News</Button>
@@ -46,6 +47,11 @@ class Home extends Component {
             <Link to = '/Profile'>
                 <Button variant="outline-warning" style={{margin:'1rem 0 15rem 0', width: '6rem'}}>User Profile</Button>
             </Link>
+          <Button  variant='outline-warning' onClick={askForPermissioToReceiveNotifications} >
+            Clique aqui para receber notificações
+          </Button>
+
+
         </div>
     );
   }

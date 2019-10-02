@@ -21,7 +21,7 @@ class Clockjs extends Component {
             <Clock
               value={this.state.date}
               size={250}
-              renderNumbers={false}
+              renderNumbers={true}
               secondHandWidth={2}
               minuteHandWidth={3}
               hourHandWidth={5}

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import logoveri from '../img/layout_set_logo.png';
 import arrow from '../img/back.svg';
+import { Button } from 'react-bootstrap';
 
 class Nav extends Component {
     
@@ -26,7 +27,7 @@ class Nav extends Component {
                 </Link>
                 </div> */}
                 <div>
-                    <button onClick={()=> this.handleReturn()}><img src={arrow} alt="log" style={{width: '2.5rem', height: '1rem'}}/></button>
+                    <Button style={{backgroundColor:'transparent', borderColor:'transparent'}}onClick={()=> this.handleReturn()}><img src={arrow} alt="log" style={{width: '2.5rem', height: '1rem'}}/></Button>
                 </div>
             </nav>
         );

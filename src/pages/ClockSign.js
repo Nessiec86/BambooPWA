@@ -84,7 +84,7 @@ class Clocksign extends Component {
                         name="text"
                         value={text}
                     />
-                    <p style={{margin:'1rem 0'}}>Usuario: {name}</p>
+                    <p style={{margin:'1rem 0'}}>{name}</p>
                     {start > 0 ?
                         <p>Hora de Entrada: {time}</p>
                     :
