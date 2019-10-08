@@ -35,8 +35,11 @@ class Home extends Component {
       </div>
        :
         <div className="App">
+          <div className='logos'>
             <img src={logoveri} style={{width: '30%', margin:'5% auto'}} alt='logo-veritas'/>
             <img src={logo} className="App-logo" alt="logo" />
+          </div>
+          <div className='buttons'>
             <Link to = '/Clock'>
                 <Button  variant="outline-warning" style={{margin:'5rem 0 1rem 0', fontWeight:'bolder', width: '6rem '}}>Clock</Button>
             </Link>
@@ -46,6 +49,7 @@ class Home extends Component {
             <Link to = '/Profile'>
                 <Button variant="outline-warning" style={{margin:'1rem 0 15rem 0', width: '6rem'}}>User Profile</Button>
             </Link>
+          </div>
         </div>
     );
   }
