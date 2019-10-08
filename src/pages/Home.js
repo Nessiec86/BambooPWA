@@ -5,7 +5,6 @@ import logo from '../logo.svg';
 import logoveri from '../img/layout_set_logo.png';
 import LoadingDots from '../Components/LoadingDots';
 import { setTimeout } from 'timers';
-import { askForPermissioToReceiveNotifications } from '../lib/Push-notifications';
 
 class Home extends Component {
 
@@ -47,11 +46,6 @@ class Home extends Component {
             <Link to = '/Profile'>
                 <Button variant="outline-warning" style={{margin:'1rem 0 15rem 0', width: '6rem'}}>User Profile</Button>
             </Link>
-          <Button  variant='outline-warning' onClick={askForPermissioToReceiveNotifications} >
-            Clique aqui para receber notificações
-          </Button>
-
-
         </div>
     );
   }
