@@ -47,7 +47,7 @@ class Home extends Component {
                 <Button variant="outline-warning" style={{width: '6rem'}}>News</Button>
             </Link>
             <Link to = '/Profile'>
-                <Button variant="outline-warning" style={{margin:'1rem 0 15rem 0', width: '6rem'}}>User Profile</Button>
+                <Button variant="outline-warning" style={{width: '6rem'}}>User Profile</Button>
             </Link>
           </div>
         </div>

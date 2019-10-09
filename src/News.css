@@ -1,0 +1,58 @@
+.sidebar-container {
+  width: 70px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #ac451d;  
+  text-align: left;
+  overflow: hidden;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.sidebar-container:hover {
+  width: 200px;
+  -webkit-box-shadow: 10px 0px 10px 3px rgba(0, 0, 0, 0.3);
+          box-shadow: 10px 0px 10px 3px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar-container .link {
+  width: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px;
+  font-size: 20px;
+  color: whitesmoke;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.sidebar-container .link:hover {
+  cursor: pointer;
+  color: #ac451d;
+  background-color: whitesmoke;
+}
+
+.sidebar-container .link .link-icon {
+  width: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0px 20px 0px 0px;
+}
+/*# sourceMappingURL=News.css.map */

@@ -1,0 +1,41 @@
+.sidebar-container {
+	width: 70px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: grey;
+	text-align: left;
+	overflow: hidden;
+	transition: all 0.5s;
+	
+	&:hover {
+		width: 200px;
+		box-shadow: 10px 0px 10px 3px rgba(0,0,0,0.3);
+	}
+	
+	.link {
+		width: 180px;
+		display: flex;
+		padding: 20px;
+		font-size: 20px;
+		color: whitesmoke;
+		transition: all 0.3s;
+		
+		&:hover {
+			cursor: pointer;
+			color: grey;
+			background-color: whitesmoke;
+		}
+		
+		.link-icon {
+			width: 35px;
+			display: flex;
+			justify-content: center;
+			margin: 0px 20px 0px 0px;
+		}
+	}
+}
