@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-import Nav from '../Components/Nav';
 import {Button} from 'react-bootstrap';
 import '../News.css';
-import arrow from '../img/back.svg';
 
 
-
-class News extends Component {
+class Sidebar extends Component {
   
   handleClick = (url) => {
     alert(`Clicked on link to: "${url}"`);
@@ -87,4 +84,4 @@ class News extends Component {
   }
 }
 
-export default News;
+export default Sidebar;

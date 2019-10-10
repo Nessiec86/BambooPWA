@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import ClockSign from './ClockSign';
 import Clockjs from '../Components/Clockjs';
 import Nav from '../Components/Nav';
-
+import Sidebar from '../Components/Sidebar';
 
 
 class Clock extends Component {
@@ -19,6 +19,7 @@ class Clock extends Component {
     return (
       <div className='backgr'>
         <Nav/>
+        <Sidebar/>
         <div className="contain">
           <header className='App-header'>
             <h2>Registro Horario</h2>
