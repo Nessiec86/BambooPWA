@@ -45,6 +45,7 @@ class Clocksign extends Component {
                 date: new Date().toString(),
             });
             this.handleSubmit(event)
+            window.location.reload();
         })
         
         .catch(error => {
@@ -83,24 +84,25 @@ class Clocksign extends Component {
                         onChange={this.handleChange}
                         name="text"
                         value={text}
+                        style={{margin:'0 0 1rem 0'}}
                     />
                     <p style={{margin:'1rem 0'}}>{name}</p>
                     {start > 0 ?
                         <p>Hora de Entrada: {time}</p>
                     :
-                        <p></p>
+                        <p style={{margin:'1.3rem 0'}}></p>
                     }
-                    <Button variant="success"className='val' onClick={() => this.handleSubmit(text)}>Validar</Button>
+                    <Button variant="success"className='val' onClick={() => this.handleSubmit(text)}>VALIDAR</Button>
                     {name.length < 9 ?
                         <div>
                         </div>
                         :
                         <div style={{display:'flex', justifyContent:'center'}}>
                             {start === 0 ?
-                                <Button variant="success" className='work' onClick={() => this.handleWork(text)}>Empezar a trabajar</Button>
+                                <Button variant="success" className='work' onClick={() => this.handleWork(text)}>EMPEZAR A TRABAJAR</Button>
                                 :
                                 <>
-                                <Button variant="danger" className='work' onClick={() => this.handleWork(text)}>Dejar de trabajar</Button>
+                                <Button variant="danger" className='work' onClick={() => this.handleWork(text)}>DEJAR DE TRABAJAR</Button>
                                 </>
                             }
                         </div>

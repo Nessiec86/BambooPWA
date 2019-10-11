@@ -3,7 +3,7 @@ import ClockSign from './ClockSign';
 import Clockjs from '../Components/Clockjs';
 import Nav from '../Components/Nav';
 import Sidebar from '../Components/Sidebar';
-
+import NewClock from '../Components/NewClock';
 
 class Clock extends Component {
   
@@ -19,12 +19,13 @@ class Clock extends Component {
     return (
       <div className='backgr'>
         <Nav/>
-        <Sidebar/>
+        {/* <Sidebar/> */}
         <div className="contain">
           <header className='App-header'>
-            <h2>Registro Horario</h2>
+            <h2>REGISTRO HORARIO</h2>
           </header>
-            <Clockjs />
+            <NewClock/>
+            {/* <Clockjs /> */}
             <ClockSign props={this.state}/>
           </div>
       </div>

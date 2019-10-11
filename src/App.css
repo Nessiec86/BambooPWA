@@ -35,6 +35,7 @@
   justify-content: center;
   color: white;
   width: 100%;
+  font-family: 'Verifont';
 }
 
 .App-link {
@@ -80,6 +81,7 @@
 }
 .clock-sign {
   font-family: 'Verifont';
+  font-size: 1.2rem;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -95,7 +97,7 @@
 }
 
 .val {
-  margin: 0 0 15rem 0;
+  margin-bottom: 17rem;
 }
 .work {
   margin:-10rem 0 5rem 0;
@@ -236,4 +238,49 @@ time {
     height: max-content;
 
   }
+}
+
+
+/* NEW CLOCK STYLES */
+/* html, body { height: 100%; margin: 0; overflow: hidden; }
+
+body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  font-family: Roboto Mono, Arial, sans-serif;
+  font-size: 8vw;
+  text-align: center;
+  
+  background-color: #ac451d;
+  color: #eee;
+  user-select: none;
+} */
+
+hr {
+  border: 0;
+  border-bottom: 1px solid #444;
+}
+
+#date, #hours, #minutes, #seconds {
+  margin: 0;
+  text-shadow: 0rem 0rem 1rem rgba(255, 255, 255, 0.7), 
+               0rem 0rem 2rem rgba(255, 255, 255, 0.3);
+}
+#hours, #minutes, #seconds {
+  display: inline-block;
+}
+#date {
+  font-size: 6.3vw;
+  margin: 0 0 2rem 0;
+}
+#hours, #minutes {
+  font-size: 20vw;
+  font-weight: 300;
+}
+#seconds {
+  font-size: 12vw;
+  font-weight: 100;
 }
