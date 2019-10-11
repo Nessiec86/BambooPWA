@@ -35,7 +35,7 @@ class NewClock extends Component {
     let d = `${days[date.getDay()]}, ${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
 
     return (
-      <div style={{margin:'15% 0'}}>
+      <div className='newclock'>
         <p id="date">{d}</p>
         <hr/>
         <h3 id="hours">{h}:</h3>

@@ -284,3 +284,15 @@ hr {
   font-size: 12vw;
   font-weight: 100;
 }
+.newclock {
+  margin: 15% 0;
+}
+
+@media only screen and (max-height: 770px) {
+  .newclock {
+    margin: 5% 0;
+  }
+  .val {
+    margin-bottom: 15rem;
+  }
+}
