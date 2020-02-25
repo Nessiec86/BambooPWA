@@ -7,14 +7,16 @@ class User {
         this.User = axios.create ({
             baseURL: APIURL,
         });
+       
     }
 
     read = (id) => {
         return this.User
         .get(`idCheck/?keyword=${id}`)
         .then(({ data }) => data);
-        };
-
+    };
+    
+    
     change = (id) => {
         return this.User
         .get(`idCheckSet/?keyword=${id}`)

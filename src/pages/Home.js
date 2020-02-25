@@ -44,10 +44,16 @@ class Home extends Component {
                 <Button  variant="outline-warning" style={{margin:'5rem 0 1rem 0', fontWeight:'bolder', width: '6rem '}}>Clock</Button>
             </Link>
             <Link to = '/News'>
-                <Button variant="outline-warning" style={{width: '6rem'}}>News</Button>
+                <Button variant="outline-warning" style={{margin:'5rem 0 1rem 0', width: '6rem'}}>News</Button>
             </Link>
             <Link to = '/Profile'>
-                <Button variant="outline-warning" style={{width: '6rem'}}>User Profile</Button>
+                <Button variant="outline-warning" style={{margin:'5rem 0 1rem 0', width: '6rem'}}>User Profile</Button>
+            </Link>
+            <Link to = '/Sales'>
+                <Button variant="outline-warning" style={{margin:'5rem 0 1rem 0', width: '6rem'}}>Sales</Button>
+            </Link>
+            <Link to = '/Pac'>
+                <Button variant="outline-warning" style={{margin:'5rem 0 1rem 0', width: '6rem'}}>Pac</Button>
             </Link>
           </div>
         </div>

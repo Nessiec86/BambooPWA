@@ -5,6 +5,8 @@ import {Button} from 'react-bootstrap';
 import '../News.css';
 import arrow from '../img/back.svg';
 
+  
+ 
 
 
 class News extends Component {
@@ -45,8 +47,10 @@ class News extends Component {
       
     ]
     
+
     
       return (
+        <>
         <nav className="sidebar-container">
         {/* { links.map(link => {
             return (
@@ -83,6 +87,7 @@ class News extends Component {
         Back
       </div>
       </nav>
+    </>
     )
   }
 }
