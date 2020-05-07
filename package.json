@@ -9,6 +9,7 @@
     "bootstrap": "^4.3.1",
     "dotenv": "^8.1.0",
     "firebase": "^6.6.2",
+    "jsmodbus": "^3.1.6",
     "react": "^16.9.0",
     "react-big-calendar": "^0.22.1",
     "react-bootstrap": "^1.0.0-beta.12",
@@ -16,6 +17,7 @@
     "react-dom": "^16.9.0",
     "react-router-dom": "^5.0.1",
     "react-scripts": "^3.4.0",
+    "serialport": "^8.0.8",
     "styled-components": "^4.3.2"
   },
   "scripts": {

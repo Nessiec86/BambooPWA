@@ -55,6 +55,9 @@ class Home extends Component {
             <Link to = '/Pac'>
                 <Button variant="outline-warning" style={{margin:'5rem 0 1rem 0', width: '6rem'}}>Pac</Button>
             </Link>
+            <Link to = '/Air'>
+                <Button variant="outline-warning" style={{margin:'5rem 0 1rem 0', width: '6rem'}}>Air</Button>
+            </Link>
           </div>
         </div>
     );

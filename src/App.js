@@ -8,6 +8,7 @@ import Profile from './pages/Profile';
 import Sales from './pages/Sales';
 import NotFound from './Components/NotFound';
 import Pac from './pages/Pac';
+import Air from './pages/Air';
 
 require('dotenv').config();
 
@@ -22,6 +23,7 @@ class App extends Component {
         <Route exact path="/Profile" component={Profile} />
         <Route exact path="/Sales" component={Sales} />
         <Route exact path="/Pac" component={Pac} />
+        <Route exact path="/Air" component={Air} />
         <Route path='*' exact={true} component={NotFound} />
       </Switch>
     );
